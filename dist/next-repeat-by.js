@@ -3,7 +3,7 @@
  * description: Repeat by for next.
  * url: https://github.com/afeiship/next-repeat-by
  * version: 1.0.0
- * date: 2020-01-06 14:22:18
+ * date: 2020-01-06 21:08:46
  * license: MIT
  */
 
@@ -14,11 +14,11 @@
 
   nx.repeatBy = function(inItem, inCount, inCallback) {
     var callback = inCallback || RETURN_VALUE;
-    var list = [];
+    var result = [];
     for (var i = 0; i < inCount; i++) {
-      list.push(inItem);
+      result.push(callback(inItem));
     }
-    return callback(list);
+    return result;
   };
 
   if (typeof module !== 'undefined' && module.exports) {

@@ -5,11 +5,11 @@
 
   nx.repeatBy = function(inItem, inCount, inCallback) {
     var callback = inCallback || RETURN_VALUE;
-    var list = [];
+    var result = [];
     for (var i = 0; i < inCount; i++) {
-      list.push(inItem);
+      result.push(callback(inItem));
     }
-    return callback(list);
+    return result;
   };
 
   if (typeof module !== 'undefined' && module.exports) {
